@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RKUN London | Fine Jewellery Crafted for the Modern Era</title>
+    <meta name="description" content="Discover affordable luxury at RKUN London. Exquisite tennis bracelets, necklaces & rings crafted with 18K gold plating and cubic zirconia. Free UK delivery over £25.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c9a96e; --gold-light: #e8d5b5; --black: #0f0f0f; --charcoal: #1a1a1a; --cream: #faf9f6; --white: #ffffff; --text: #2c2c2c; --text-light: #6b6b6b; --border: #e5e5e5; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', Georgia, serif; }
+        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--black); letter-spacing: 2px; text-decoration: none; }
+        .logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; position: relative; }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-actions { display: flex; align-items: center; gap: 20px; }
+        .cart-btn { position: relative; background: none; border: none; cursor: pointer; padding: 8px; }
+        .cart-btn svg { width: 24px; height: 24px; stroke: var(--text); fill: none; }
+        .cart-count { position: absolute; top: 0; right: 0; background: var(--gold); color: var(--white); font-size: 0.65rem; font-weight: 600; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hero { position: relative; height: 90vh; min-height: 600px; background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; opacity: 0.4; background: url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1920&q=80') center/cover; }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: var(--white); max-width: 700px; padding: 0 24px; }
+        .hero-subtitle { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; font-weight: 400; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.15; margin-bottom: 24px; font-weight: 600; }
+        .hero h1 em { font-style: italic; color: var(--gold-light); }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 40px; font-weight: 300; line-height: 1.7; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-radius: 0; cursor: pointer; transition: all 0.3s ease; border: none; }
+        .btn-primary { background: var(--gold); color: var(--black); }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,169,110,0.3); }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .trust-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .trust-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: var(--text-light); font-weight: 500; }
+        .trust-item svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+        .section { padding: 80px 24px; max-width: 1280px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--black); margin-bottom: 12px; font-weight: 600; }
+        .section-header p { color: var(--text-light); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+        .gold-line { width: 60px; height: 2px; background: var(--gold); margin: 16px auto 0; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px; }
+        .product-card { background: var(--white); border: 1px solid var(--border); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .product-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
+        .product-image { position: relative; aspect-ratio: 1; overflow: hidden; background: #f8f8f8; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .product-card:hover .product-image img { transform: scale(1.05); }
+        .product-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--white); font-size: 0.65rem; font-weight: 600; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; }
+        .product-wishlist { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.9); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: opacity 0.3s; }
+        .product-card:hover .product-wishlist { opacity: 1; }
+        .product-wishlist svg { width: 18px; height: 18px; stroke: var(--text); fill: none; }
+        .product-info { padding: 20px; }
+        .product-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+        .product-title { font-size: 0.95rem; color: var(--text); margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.8em; }
+        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+        .product-price { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--black); font-weight: 600; }
+        .product-price .was { font-size: 0.85rem; color: var(--text-light); text-decoration: line-through; margin-left: 6px; font-weight: 400; }
+        .add-to-cart { width: 36px; height: 36px; border-radius: 50%; background: var(--black); color: var(--white); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
+        .add-to-cart:hover { background: var(--gold); transform: scale(1.1); }
+        .add-to-cart svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .filter-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-tab { padding: 10px 24px; border: 1px solid var(--border); background: var(--white); font-size: 0.8rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; color: var(--text); }
+        .filter-tab:hover, .filter-tab.active { background: var(--black); color: var(--white); border-color: var(--black); }
+        .about { background: var(--cream); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { position: relative; height: 500px; background: url('https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80') center/cover; }
+        .about-image::before { content: ''; position: absolute; inset: 20px; border: 1px solid var(--gold); pointer-events: none; }
+        .about-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--black); }
+        .about-content p { color: var(--text-light); margin-bottom: 20px; line-height: 1.8; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+        .about-feature { display: flex; gap: 12px; }
+        .about-feature svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; flex-shrink: 0; }
+        .about-feature h4 { font-size: 0.95rem; margin-bottom: 4px; color: var(--black); }
+        .about-feature p { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+        .shipping-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .shipping-card { text-align: center; padding: 32px 20px; border: 1px solid var(--border); transition: all 0.3s; }
+        .shipping-card:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+        .shipping-card svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; margin-bottom: 16px; }
+        .shipping-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--black); }
+        .shipping-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+        .footer { background: var(--black); color: rgba(255,255,255,0.7); padding: 60px 24px 24px; }
+        .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 16px; display: inline-block; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+        .footer h4 { color: var(--white); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; font-weight: 600; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .payment-icons { display: flex; gap: 8px; align-items: center; }
+        .payment-icons span { background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+        .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .cart-overlay.open { opacity: 1; visibility: visible; }
+        .cart-drawer { position: fixed; top: 0; right: 0; width: 420px; max-width: 100%; height: 100%; background: var(--white); z-index: 2001; transform: translateX(100%); transition: transform 0.4s ease; display: flex; flex-direction: column; }
+        .cart-drawer.open { transform: translateX(0); }
+        .cart-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .cart-header h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+        .close-cart { background: none; border: none; cursor: pointer; padding: 4px; }
+        .close-cart svg { width: 24px; height: 24px; stroke: var(--text); fill: none; stroke-width: 2; }
+        .cart-items { flex: 1; overflow-y: auto; padding: 24px; }
+        .cart-empty { text-align: center; padding: 60px 20px; color: var(--text-light); }
+        .cart-empty svg { width: 48px; height: 48px; stroke: var(--border); fill: none; margin-bottom: 16px; }
+        .cart-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .cart-item img { width: 80px; height: 80px; object-fit: cover; border: 1px solid var(--border); }
+        .cart-item-info { flex: 1; }
+        .cart-item-title { font-size: 0.9rem; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .cart-item-price { font-weight: 600; color: var(--black); }
+        .cart-item-qty { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+        .qty-btn { width: 28px; height: 28px; border: 1px solid var(--border); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+        .remove-item { background: none; border: none; color: var(--text-light); font-size: 0.75rem; cursor: pointer; text-decoration: underline; margin-top: 4px; }
+        .cart-footer { padding: 24px; border-top: 1px solid var(--border); background: var(--cream); }
+        .cart-subtotal { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem; }
+        .cart-total { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .cart-note { font-size: 0.8rem; color: var(--text-light); margin-bottom: 16px; text-align: center; }
+        .checkout-btn { width: 100%; padding: 16px; background: var(--black); color: var(--white); border: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+        .checkout-btn:hover { background: var(--gold); color: var(--black); }
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); border-top: 1px solid var(--border); padding: 20px 24px; z-index: 1500; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); }
+        .cookie-banner p { font-size: 0.85rem; color: var(--text-light); margin: 0; flex: 1; }
+        .cookie-banner a { color: var(--gold); }
+        .cookie-btn { padding: 10px 24px; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: none; }
+        .cookie-accept { background: var(--black); color: var(--white); }
+        .cookie-decline { background: var(--cream); color: var(--text); border: 1px solid var(--border); }
+        .cookie-banner.hidden { display: none; }
+        .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--black); color: var(--white); padding: 14px 28px; font-size: 0.9rem; z-index: 3000; opacity: 0; transition: all 0.4s ease; white-space: nowrap; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; } .about-image { height: 300px; } .shipping-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .mobile-menu-btn { display: block; } .hero h1 { font-size: 2rem; } .hero-buttons { flex-direction: column; align-items: center; } .btn { width: 100%; max-width: 280px; justify-content: center; } .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .shipping-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .about-features { grid-template-columns: 1fr; } .cart-drawer { width: 100%; } .trust-container { flex-direction: column; gap: 12px; } }
+        @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr; } .section { padding: 48px 16px; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">RKUN <span>LONDON</span></a>
+            <ul class="nav-links">
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#featured">Bestsellers</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#shipping">Delivery</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()" aria-label="Shopping Cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Affordable Luxury Since 2015</p>
+            <h1>Timeless Elegance, <em>Modern Craft</em></h1>
+            <p>Discover exquisite tennis bracelets, necklaces and rings crafted with 18K gold plating and brilliant cubic zirconia. Designed in London, worn worldwide.</p>
+            <div class="hero-buttons">
+                <a href="#shop" class="btn btn-primary">Shop Collection</a>
+                <a href="#about" class="btn btn-outline">Our Craftsmanship</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Secure SSL Checkout</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Free UK Delivery over £25</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>30-Day Returns</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                <span>Ethically Crafted</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="featured">
+        <div class="section-header">
+            <h2>Bestsellers</h2>
+            <p>Our most loved pieces, chosen by thousands of customers across the UK and beyond.</p>
+            <div class="gold-line"></div>
+        </div>
+        <div class="product-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="section" id="shop" style="background: var(--cream);">
+        <div class="section-header">
+            <h2>Shop All Jewellery</h2>
+            <p>Explore our full collection of bracelets, necklaces, rings and earrings.</p>
+            <div class="gold-line"></div>
+        </div>
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="Bracelets">Bracelets</button>
+            <button class="filter-tab" data-filter="Necklaces">Necklaces</button>
+            <button class="filter-tab" data-filter="Rings">Rings</button>
+            <button class="filter-tab" data-filter="Earrings">Earrings</button>
+        </div>
+        <div class="product-grid" id="shopGrid"></div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button class="btn btn-outline" id="loadMore" style="border-color: var(--black); color: var(--black);">Load More Products</button>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="about-grid">
+            <div class="about-image"></div>
+            <div class="about-content">
+                <h2 class="serif">Crafted with <em>Precision</em></h2>
+                <p>At RKUN London, we believe luxury should be accessible. Since 2015, we have specialised in creating stunning tennis jewellery and cubic zirconia pieces that rival the brilliance of diamonds at a fraction of the cost.</p>
+                <p>Each piece is crafted using premium copper bases with genuine 18K gold or platinum plating, set with hand-selected AAA-grade cubic zirconia stones. Our commitment to quality means every item undergoes rigorous inspection before it reaches your door.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <div>
+                            <h4>Premium Materials</h4>
+                            <p>18K gold plating on hypoallergenic copper</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <div>
+                            <h4>Fast Dispatch</h4>
+                            <p>Orders shipped within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        <div>
+                            <h4>Secure Packaging</h4>
+                            <p>Gift-ready boxes with every order</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <div>
+                            <h4>Wholesale Welcome</h4>
+                            <p>Trade accounts available worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="shipping">
+        <div class="section-header">
+            <h2>Delivery & Returns</h2>
+            <p>We deliver across the United Kingdom and worldwide with trusted courier partners.</p>
+            <div class="gold-line"></div>
+        </div>
+        <div class="shipping-grid">
+            <div class="shipping-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <h3>Free UK Delivery</h3>
+                <p>Spend £25 or more and enjoy complimentary tracked delivery within 3-5 working days.</p>
+            </div>
+            <div class="shipping-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <h3>Express Shipping</h3>
+                <p>Need it sooner? Choose Royal Mail Tracked 24 or DPD Next Day at checkout.</p>
+            </div>
+            <div class="shipping-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <h3>30-Day Returns</h3>
+                <p>Not completely satisfied? Return unworn items within 30 days for a full refund or exchange.</p>
+            </div>
+            <div class="shipping-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <h3>Worldwide Delivery</h3>
+                <p>We ship to over 50 countries with fully tracked international postage from £8.99.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">RKUN <span>LONDON</span></a>
+                <p>Premium yet affordable jewellery crafted for the modern era. Designed with precision, delivered with care. Based in London, serving customers worldwide since 2015.</p>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Tennis Bracelets</a></li>
+                    <li><a href="#">Necklaces</a></li>
+                    <li><a href="#">Rings</a></li>
+                    <li><a href="#">Earrings</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Help</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Delivery Info</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Jewellery Care</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 RKUN London. All rights reserved. Company registration: England & Wales.</span>
+            <div class="payment-icons">
+                <span>Visa</span>
+                <span>Mastercard</span>
+                <span>Amex</span>
+                <span>PayPal</span>
+                <span>Apple Pay</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <button class="close-cart" onclick="toggleCart()" aria-label="Close Cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+                <p>Your bag is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">£0.00</span>
+            </div>
+            <div class="cart-note">Shipping & taxes calculated at checkout. Free UK delivery over £25.</div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to enhance your experience, analyse site traffic, and for marketing purposes. By continuing to browse, you agree to our <a href="#">Cookie Policy</a> and <a href="#">Privacy Policy</a>.</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept All</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const featuredProducts = [{"id": 1, "title": "Copper with 18K Gold Cubic Zirconia Tennis Bracelet Full Pave Fashion Luxury Jew", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_1.jpg", "sales": 84735}, {"id": 2, "title": "18K White Gold Plated 4\u722a2mm 3mm 4mm 5mm 6mm Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u6f6e", "category": "Necklaces", "material": "18K White Gold Plated", "price": 7.37, "image": "./images/product_2.jpg", "sales": 13756}, {"id": 3, "title": "Bestseller 2mm -7mm \u94dcSet Cubic Zirconia Tennis Bracelet Designer \u624b\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_3.jpg", "sales": 8967}, {"id": 33, "title": "\u8865\u5dee\u4ef7\u8865\u90ae\u8d39\u4e13\u7528\u5dee\u591a\u5c11\u8865\uff08\u5355\u62cd\u4e0d\u53d1\u8d27\uff09\u8033\u9970\u8033\u73af\u73cd\u73e0\u9ec4\u94dc\u6750\u8d28", "category": "Earrings", "material": "18K Gold Plated", "price": 0.11, "image": "./images/product_33.jpg", "sales": 4448}, {"id": 13, "title": "\u6b27\u7f8eDesigner \u53e4\u5df4\u624b\u94fe12mm \u5bbd\u51b0\u7cd6\u94feCubic Zirconia Tennis Bracelet \u7ffb\u76d6\u7537\u58eb\u624b\u9970\u6f6e\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 6.05, "image": "./images/product_13.jpg", "sales": 4340}, {"id": 4, "title": "2.5mm 3.5mm Tennis Bracelet 4-Prong Setting Cubic Zirconia \u624b\u94feUnisex \u4e9a\u9a6c\u900a", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_4.jpg", "sales": 1802}, {"id": 15, "title": "Designer \u5546\u54c1\u6b27\u7f8e\u7206\u6b3e\u563b\u54c83MM\u9576Cubic Zirconia Tennis Bracelet \u53cc\u6392Tennisbracelet\u6f6e\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_15.jpg", "sales": 1626}, {"id": 16, "title": "4mm \u5706\u5f62Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94fe \u65f6\u5c1a\u8bbeNew", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_16.jpg", "sales": 1573}, {"id": 22, "title": "\u6b27\u7f8e\u563b\u54c83mm 4mm \u9ed1\u7eb3\u7c73Cubic Zirconia \u624b\u94fe\u94dcSet Cubic Zirconia Designer \u624b\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_22.jpg", "sales": 1321}, {"id": 14, "title": "3*3\u65b9\u77f3Tennis Bracelet \u516b\u5b57\u6263\u94dc\u624b\u94fe\u7537\u5973\u65f6\u5c1a\u8bbe\u4e9a\u9a6c\u900a \u7206\u6b3e\u6279\u53d1\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_14.jpg", "sales": 989}, {"id": 44, "title": "3\u722a3mm -5mm \u6e10\u53d8Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u91cd\u5de5\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.37, "image": "./images/product_44.jpg", "sales": 964}, {"id": 65, "title": "\u4e09\u722aTennis Necklace 2mm 3mm 4mm \u563b\u54c8\u94dc\u9576Cubic Zirconia \u8f7b\u5962\u4e9a\u9a6c\u900aBestseller \u6f6e\u5de5\u5382\u6279", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.26, "image": "./images/product_65.jpg", "sales": 928}, {"id": 100, "title": "18K\u771f\u7a7a\u7535\u9540316L\u4e0d\u9508\u94a22.0\u7ebf\u5f84\u7ebf\u5708\u8033\u73af\u8010\u78e8\u4fdd\u8272\u8033\u9489\u8033\u9970\u73af\u5f62\u767e\u642d", "category": "Earrings", "material": "18K Gold Plated", "price": 0.88, "image": "./images/product_100.jpg", "sales": 622}, {"id": 10, "title": "Designer \u76f4\u9500\u94dcSet 3mm Cubic Zirconia \u8f7b\u5962\u9ad8\u7ea7\u611fFull Pave Tennis Bracelet \u7537\u5973Fashion \u9996\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_10.jpg", "sales": 620}, {"id": 145, "title": "S925\u94f6\u94dc\u4e0d\u9508\u94a2\u83ab\u6851\u7535\u9540Cubic Zirconia Tennis Bracelet \u9879\u94fe\u540a\u5760 Designer \u52a0\u5de5\u6765\u56fe\u5b9a\u5236", "category": "Necklaces", "material": "Sterling Silver", "price": 33.0, "image": "./images/product_145.jpg", "sales": 618}, {"id": 28, "title": "\u94dcSet Cubic Zirconia \u5957\u88c5\u5c0f\u8033\u9489\u7537\u5973Fashion \u6f6e\u517b\u8033\u6d1e\u8033\u9970 \u7206\u6b3e", "category": "Earrings", "material": "18K Gold Plated", "price": 2.86, "image": "./images/product_28.jpg", "sales": 583}, {"id": 57, "title": "12mm \u53e4\u5df4\u9879\u94fe\u51b0\u7cd6\u9879\u94fe\u94dcSet Cubic Zirconia \u9888\u94fe\u91cd\u5de5\u8bbe\u8ba1\u563b\u54c8\u6b27\u7f8eDesigner \u4e13\u4f9b\u6279", "category": "Necklaces", "material": "18K Gold Plated", "price": 14.19, "image": "./images/product_57.jpg", "sales": 581}, {"id": 6, "title": "New 2mm Cubic Zirconia Tennis Bracelet Fashion \u9ad8\u7ea7\u611f\u6f6e\u6d41\u5355\u6392\u94bb\u624b\u9970 \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.85, "image": "./images/product_6.jpg", "sales": 577}, {"id": 59, "title": "\u4e09\u722aTennis Necklace 4mm \u563b\u54c8\u94dc\u9576Cubic Zirconia \u8f7b\u5962\u4e9a\u9a6c\u900aBestseller \u9879\u9970\u6f6e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.26, "image": "./images/product_59.jpg", "sales": 547}, {"id": 19, "title": "3mm \u6b27\u7f8e\u5f69\u8272\u624b\u94fe\u65f6\u5c1a\u521b\u610f\u94dcSet Cubic Zirconia Tennis Bracelet \u70ed\u5356\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.41, "image": "./images/product_19.jpg", "sales": 537}, {"id": 143, "title": "Designer 18K Gold \u7089\u5185\u771f\u7a7a\u7535\u9540\u4e0d\u9508\u94a22.0\u7ba1\u5f84\u5706\u5f62\u8033\u73af\u8033\u5708\u8033\u4e9a\u9a6c\u900a\u4e13\u4f9b", "category": "Earrings", "material": "18K Gold Plated", "price": 0.72, "image": "./images/product_143.jpg", "sales": 512}, {"id": 20, "title": "New 3mm 4mm 5mm \u5f39\u7c27\u6263Cubic Zirconia Tennis Bracelet \u624b\u9970Fashion \u9996\u9970 \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_20.jpg", "sales": 478}, {"id": 26, "title": "New \u6e10\u53d8\u5927\u5c0f\u7f51\u7403Cubic Zirconia \u624b\u94fe\u7537\u5973Fashion \u6f6e\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_26.jpg", "sales": 468}, {"id": 61, "title": "New 4-Prong Setting 2.5mm 3.5mm Cubic Zirconia Full Pave Tennis Bracelet Copper ", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_61.jpg", "sales": 435}, {"id": 34, "title": "5mm Tennis Bracelet \u5706\u5f62\u53e4\u5df4\u624b\u94fe\u7537\u5973\u8f7b\u5962\u9ad8\u7ea7\u611f\u6b27\u7f8eDesigner \u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_34.jpg", "sales": 386}, {"id": 30, "title": "\u94dcSet Cubic Zirconia Tennis Bracelet \u62bd\u62c9\u53ef\u8c03\u8282Fashion \u8f7b\u5962\u6f6e\u6d41 \u76f4\u4f9b", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.86, "image": "./images/product_30.jpg", "sales": 350}, {"id": 40, "title": "\u94dcSet Cubic Zirconia Tennis Bracelet 5mm *5mm \u65b9\u5f62Fashion \u8f7b\u5962", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.18, "image": "./images/product_40.jpg", "sales": 350}, {"id": 8, "title": "3mm 4mm \u76ae\u5e26\u6263Tennis Bracelet 4-Prong Setting Cubic Zirconia \u767d\u91d1\u624b\u94fe\u5de5\u5382\u76f4\u9500Designer \u4f9b\u8d27\u5de5\u5382", "category": "Bracelets", "material": "Platinum Plated", "price": 3.3, "image": "./images/product_8.jpg", "sales": 321}, {"id": 29, "title": "New \u94dcSet Cubic Zirconia \u954018k\u91d1\u6212\u6307\u65f6\u5c1a\u4e2a\u6027\u8bbe\u8ba1\u6f6e\u6d41", "category": "Rings", "material": "18K Gold Plated", "price": 1.98, "image": "./images/product_29.jpg", "sales": 308}, {"id": 62, "title": "4mm \u5706\u5f62Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94feFashion \u65b0", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_62.jpg", "sales": 307}, {"id": 25, "title": "New 8mmTennis Bracelet \u94dcSet Cubic Zirconia \u9996\u9970 \u8f7b\u5962\u8bbe\u8ba1\u6e90\u5934", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_25.jpg", "sales": 301}, {"id": 12, "title": "4mm \u5f39\u7c27\u6263Cubic Zirconia Tennis Bracelet \u624b\u956fFashion \u6e90\u5934", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_12.jpg", "sales": 296}, {"id": 23, "title": "4\u722a3mm -7mm \u6e10\u53d8Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u91cd\u5de5\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_23.jpg", "sales": 279}, {"id": 46, "title": "3mm \u6b27\u7f8e\u91d1\u8272\u767d\u91d1\u8272\u5f69\u8272\u624b\u94fe\u94dcSet Cubic Zirconia \u7f51\u7403\u4e9a\u9a6c\u900a\u70ed\u5356\u6279\u6b27\u7f8e\u98ce\u5c1a", "category": "Bracelets", "material": "Platinum Plated", "price": 3.63, "image": "./images/product_46.jpg", "sales": 272}, {"id": 9, "title": "Copper with 18k\u91d1Set \u73ab\u7470\u91d1\u8272\u7c89\u8272\u767d\u8272Cubic Zirconia \u94bb\u77f3Tennis Bracelet Designer \u4e13\u4f9b\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_9.jpg", "sales": 267}, {"id": 58, "title": "\u4e0d\u9508\u94a2Set Cubic Zirconia \u8033\u9489\u8033\u9970Fashion \u7537\u5973\u540c\u6b3e\u6f6eDesigner \u7206\u6b3e \u9970\u54c1", "category": "Earrings", "material": "18K Gold Plated", "price": 2.2, "image": "./images/product_58.jpg", "sales": 250}, {"id": 47, "title": "Full Pave \u5706\u997c\u540a\u5760\u91d1\u9879\u94fe\u5fae\u9576Cubic Zirconia \u563b\u54c8 \u6b27\u7f8e \u70ed\u5356\u6279\u53d1\u6f6e", "category": "Necklaces", "material": "18K Gold Plated", "price": 2.75, "image": "./images/product_47.jpg", "sales": 242}, {"id": 132, "title": "\u6b27\u7f8eDesigner \u53e4\u5df4\u624b\u94fe12mm \u5bbd\u51b0\u7cd6\u94feCubic Zirconia \u624b\u94fe\u7ffb\u76d6\u7537\u58eb\u624b\u94fe\u6f6e\u6d41\u624b\u94fe\u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 6.6, "image": "./images/product_132.jpg", "sales": 229}, {"id": 24, "title": "\u591a\u8272\u9996\u9970\u76d2\u6212\u6307\u8033\u73af\u9879\u94fe\u7ed2\u5e03\u5185\u886c\u901a\u7528\u793c\u54c1\u76d2\u968f\u673a\u53d1\u8d27 \u5355\u62cd\u4e0d\u53d1\u8d27", "category": "Necklaces", "material": "18K Gold Plated", "price": 0.33, "image": "./images/product_24.jpg", "sales": 227}, {"id": 53, "title": "3\u722a3mm 4mm \u94dc\u9576Cubic Zirconia \u7f51\u7403\u516b\u5b57\u6263\u624b\u94fe\u5c0f\u4f17\u8bbe\u8ba1 \u70ed\u5356\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_53.jpg", "sales": 225}];
+        const allProducts = [{"id": 1, "title": "Copper with 18K Gold Cubic Zirconia Tennis Bracelet Full Pave Fashion Luxury Jew", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_1.jpg", "sales": 84735}, {"id": 2, "title": "18K White Gold Plated 4\u722a2mm 3mm 4mm 5mm 6mm Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u6f6e", "category": "Necklaces", "material": "18K White Gold Plated", "price": 7.37, "image": "./images/product_2.jpg", "sales": 13756}, {"id": 3, "title": "Bestseller 2mm -7mm \u94dcSet Cubic Zirconia Tennis Bracelet Designer \u624b\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_3.jpg", "sales": 8967}, {"id": 4, "title": "2.5mm 3.5mm Tennis Bracelet 4-Prong Setting Cubic Zirconia \u624b\u94feUnisex \u4e9a\u9a6c\u900a", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_4.jpg", "sales": 1802}, {"id": 5, "title": "New Copper with 18k\u91d1Set 2.5mm Cubic Zirconia Silver Tone Full Pave Tennis Bracel", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_5.jpg", "sales": 19}, {"id": 6, "title": "New 2mm Cubic Zirconia Tennis Bracelet Fashion \u9ad8\u7ea7\u611f\u6f6e\u6d41\u5355\u6392\u94bb\u624b\u9970 \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.85, "image": "./images/product_6.jpg", "sales": 577}, {"id": 7, "title": "New 4-Prong Setting \u83ab\u6851\u77f3\u94dcTennis Bracelet Fashion Full Pave \u624b\u9970Designer \u4e13\u4f9b\u756a\u79ba\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 9.02, "image": "./images/product_7.jpg", "sales": 181}, {"id": 8, "title": "3mm 4mm \u76ae\u5e26\u6263Tennis Bracelet 4-Prong Setting Cubic Zirconia \u767d\u91d1\u624b\u94fe\u5de5\u5382\u76f4\u9500Designer \u4f9b\u8d27\u5de5\u5382", "category": "Bracelets", "material": "Platinum Plated", "price": 3.3, "image": "./images/product_8.jpg", "sales": 321}, {"id": 9, "title": "Copper with 18k\u91d1Set \u73ab\u7470\u91d1\u8272\u7c89\u8272\u767d\u8272Cubic Zirconia \u94bb\u77f3Tennis Bracelet Designer \u4e13\u4f9b\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_9.jpg", "sales": 267}, {"id": 10, "title": "Designer \u76f4\u9500\u94dcSet 3mm Cubic Zirconia \u8f7b\u5962\u9ad8\u7ea7\u611fFull Pave Tennis Bracelet \u7537\u5973Fashion \u9996\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.97, "image": "./images/product_10.jpg", "sales": 620}, {"id": 11, "title": "New 3mm \u5f69\u8272\u6e10\u53d8Cubic Zirconia Tennis Bracelet \u5706\u5305\u94dcSet", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.4, "image": "./images/product_11.jpg", "sales": 14}, {"id": 12, "title": "4mm \u5f39\u7c27\u6263Cubic Zirconia Tennis Bracelet \u624b\u956fFashion \u6e90\u5934", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_12.jpg", "sales": 296}, {"id": 13, "title": "\u6b27\u7f8eDesigner \u53e4\u5df4\u624b\u94fe12mm \u5bbd\u51b0\u7cd6\u94feCubic Zirconia Tennis Bracelet \u7ffb\u76d6\u7537\u58eb\u624b\u9970\u6f6e\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 6.05, "image": "./images/product_13.jpg", "sales": 4340}, {"id": 14, "title": "3*3\u65b9\u77f3Tennis Bracelet \u516b\u5b57\u6263\u94dc\u624b\u94fe\u7537\u5973\u65f6\u5c1a\u8bbe\u4e9a\u9a6c\u900a \u7206\u6b3e\u6279\u53d1\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_14.jpg", "sales": 989}, {"id": 15, "title": "Designer \u5546\u54c1\u6b27\u7f8e\u7206\u6b3e\u563b\u54c83MM\u9576Cubic Zirconia Tennis Bracelet \u53cc\u6392Tennisbracelet\u6f6e\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_15.jpg", "sales": 1626}, {"id": 16, "title": "4mm \u5706\u5f62Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94fe \u65f6\u5c1a\u8bbeNew", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_16.jpg", "sales": 1573}, {"id": 17, "title": "New \u94dcSet 3mm \u84dd\u5c16\u6676Tennis Bracelet \u954018k \u91d1\u5355\u6392Full Pave \u65f6\u5c1a\u624b\u9970\u6e90\u5934\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.07, "image": "./images/product_17.jpg", "sales": 70}, {"id": 18, "title": "New 3mm \u5f39\u7c27\u6263Set Cubic Zirconia Tennis Bracelet \u5c0f\u4f17\u8bbe\u8ba1\u624b\u9970\u7537\u5973\u767e\u642d\u4e9a\u9a6c\u900a", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_18.jpg", "sales": 65}, {"id": 19, "title": "3mm \u6b27\u7f8e\u5f69\u8272\u624b\u94fe\u65f6\u5c1a\u521b\u610f\u94dcSet Cubic Zirconia Tennis Bracelet \u70ed\u5356\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.41, "image": "./images/product_19.jpg", "sales": 537}, {"id": 20, "title": "New 3mm 4mm 5mm \u5f39\u7c27\u6263Cubic Zirconia Tennis Bracelet \u624b\u9970Fashion \u9996\u9970 \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_20.jpg", "sales": 478}, {"id": 21, "title": "New 4mm \u94dcSet Cubic Zirconia Tennis Bracelet Fashion \u9ad8\u7ea7\u611f\u6f6e\u6d41\u5355\u6392\u94bb\u624b\u9970\u756a\u79ba\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_21.jpg", "sales": 81}, {"id": 22, "title": "\u6b27\u7f8e\u563b\u54c83mm 4mm \u9ed1\u7eb3\u7c73Cubic Zirconia \u624b\u94fe\u94dcSet Cubic Zirconia Designer \u624b\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_22.jpg", "sales": 1321}, {"id": 23, "title": "4\u722a3mm -7mm \u6e10\u53d8Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u91cd\u5de5\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_23.jpg", "sales": 279}, {"id": 24, "title": "\u591a\u8272\u9996\u9970\u76d2\u6212\u6307\u8033\u73af\u9879\u94fe\u7ed2\u5e03\u5185\u886c\u901a\u7528\u793c\u54c1\u76d2\u968f\u673a\u53d1\u8d27 \u5355\u62cd\u4e0d\u53d1\u8d27", "category": "Necklaces", "material": "18K Gold Plated", "price": 0.33, "image": "./images/product_24.jpg", "sales": 227}, {"id": 25, "title": "New 8mmTennis Bracelet \u94dcSet Cubic Zirconia \u9996\u9970 \u8f7b\u5962\u8bbe\u8ba1\u6e90\u5934", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_25.jpg", "sales": 301}, {"id": 26, "title": "New \u6e10\u53d8\u5927\u5c0f\u7f51\u7403Cubic Zirconia \u624b\u94fe\u7537\u5973Fashion \u6f6e\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_26.jpg", "sales": 468}, {"id": 27, "title": "5mm \u94dcSet Cubic Zirconia \u624b\u94fe\u8f7b\u5962\u65f6\u5c1a \u7206\u6b3e\u7f51\u7403\u91cd\u5de5\u8bbe\u8ba1 \u6f6eins\u98ce", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_27.jpg", "sales": 223}, {"id": 28, "title": "\u94dcSet Cubic Zirconia \u5957\u88c5\u5c0f\u8033\u9489\u7537\u5973Fashion \u6f6e\u517b\u8033\u6d1e\u8033\u9970 \u7206\u6b3e", "category": "Earrings", "material": "18K Gold Plated", "price": 2.86, "image": "./images/product_28.jpg", "sales": 583}, {"id": 29, "title": "New \u94dcSet Cubic Zirconia \u954018k\u91d1\u6212\u6307\u65f6\u5c1a\u4e2a\u6027\u8bbe\u8ba1\u6f6e\u6d41", "category": "Rings", "material": "18K Gold Plated", "price": 1.98, "image": "./images/product_29.jpg", "sales": 308}, {"id": 30, "title": "\u94dcSet Cubic Zirconia Tennis Bracelet \u62bd\u62c9\u53ef\u8c03\u8282Fashion \u8f7b\u5962\u6f6e\u6d41 \u76f4\u4f9b", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.86, "image": "./images/product_30.jpg", "sales": 350}, {"id": 31, "title": "New 3mm \u94dcSet Cubic Zirconia \u954018k\u91d1Tennis Necklace \u65f6\u5c1a\u91cd\u5de5\u8bbe\u8ba1\u9888\u94fe\u756a\u79ba", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.37, "image": "./images/product_31.jpg", "sales": 18}, {"id": 32, "title": "New \u94dcSet 5mm \u7ea2\u521a\u7389Tennis Bracelet \u954018k\u91d1\u6b27\u7f8e\u8f7b\u5962 \u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.07, "image": "./images/product_32.jpg", "sales": 31}, {"id": 33, "title": "\u8865\u5dee\u4ef7\u8865\u90ae\u8d39\u4e13\u7528\u5dee\u591a\u5c11\u8865\uff08\u5355\u62cd\u4e0d\u53d1\u8d27\uff09\u8033\u9970\u8033\u73af\u73cd\u73e0\u9ec4\u94dc\u6750\u8d28", "category": "Earrings", "material": "18K Gold Plated", "price": 0.11, "image": "./images/product_33.jpg", "sales": 4448}, {"id": 34, "title": "5mm Tennis Bracelet \u5706\u5f62\u53e4\u5df4\u624b\u94fe\u7537\u5973\u8f7b\u5962\u9ad8\u7ea7\u611f\u6b27\u7f8eDesigner \u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_34.jpg", "sales": 386}, {"id": 35, "title": "New Copper with 18k\u767d\u91d1\u8272 3mm \u5706\u5f62\u5f69\u8272Cubic Zirconia Full Pave \u624b\u94fe\u4e9a\u9a6c\u900a\u5c0f\u4f17\u8bbe\u8ba1\u624b\u9970", "category": "Bracelets", "material": "18K White Gold Plated", "price": 4.07, "image": "./images/product_35.jpg", "sales": 83}, {"id": 36, "title": "New 3mm \u5f69\u8272\u6e10\u53d8\u624b\u94fe\u94dcSet Cubic Zirconia \u7f51\u7403\u624b\u9970\u4e9a\u9a6c\u900a\u70ed\u5356\u65f6\u5c1a", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.4, "image": "./images/product_36.jpg", "sales": 0}, {"id": 37, "title": "\u94dcSet 4mm \u6d45\u6d77\u84ddCubic Zirconia Fashion \u5355\u6392Full Pave Tennis Bracelet \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 6.38, "image": "./images/product_37.jpg", "sales": 64}, {"id": 38, "title": "New \u94dcSet Cubic Zirconia \u4e0d\u89c4\u5219\u76ae\u5e26\u6263Tennis Bracelet Fashion \u6f6e \u7206\u6b3e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.63, "image": "./images/product_38.jpg", "sales": 7}, {"id": 39, "title": "New 3mm Tennis Bracelet \u94dcSet Cubic Zirconia Fashion \u624b\u9970 \u756a\u79ba", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_39.jpg", "sales": 6}, {"id": 40, "title": "\u94dcSet Cubic Zirconia Tennis Bracelet 5mm *5mm \u65b9\u5f62Fashion \u8f7b\u5962", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.18, "image": "./images/product_40.jpg", "sales": 350}, {"id": 41, "title": "3mm \u94dcSet Cubic Zirconia \u624b\u94fe\u7f51\u7403\u5706\u5305\u624b\u94fe\u65f6\u5c1a\u6f6e\u4e9a\u9a6c\u900a \u7206\u6b3eFashion \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.41, "image": "./images/product_41.jpg", "sales": 46}, {"id": 42, "title": "Designer \u4e9a\u9a6c\u900a\u4e13\u4f9b\u7206\u6b3e3mm 4mm Cubic Zirconia \u6ef4\u80f6Tennis Bracelet \u6076\u9b54\u4e4b\u773c\u773c\u775b\u624b\u9970\u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.85, "image": "./images/product_42.jpg", "sales": 93}, {"id": 43, "title": "\u94dcTennis Bracelet Fashion \u6f6e\u6d41\u9542\u7a7a\u624b\u9970 \u756a\u79ba\u9996\u9970\u6e90\u5934", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_43.jpg", "sales": 80}, {"id": 44, "title": "3\u722a3mm -5mm \u6e10\u53d8Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u91cd\u5de5\u4e9a\u9a6c\u900a \u7206\u6b3e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.37, "image": "./images/product_44.jpg", "sales": 964}, {"id": 45, "title": "\u94dcSet Cubic Zirconia \u624b\u94feTennis Bracelet \u65f6\u5c1a\u6f6e\u4e9a\u9a6c\u900a \u7206\u6b3eFashion \u6f6e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_45.jpg", "sales": 77}, {"id": 46, "title": "3mm \u6b27\u7f8e\u91d1\u8272\u767d\u91d1\u8272\u5f69\u8272\u624b\u94fe\u94dcSet Cubic Zirconia \u7f51\u7403\u4e9a\u9a6c\u900a\u70ed\u5356\u6279\u6b27\u7f8e\u98ce\u5c1a", "category": "Bracelets", "material": "Platinum Plated", "price": 3.63, "image": "./images/product_46.jpg", "sales": 272}, {"id": 47, "title": "Full Pave \u5706\u997c\u540a\u5760\u91d1\u9879\u94fe\u5fae\u9576Cubic Zirconia \u563b\u54c8 \u6b27\u7f8e \u70ed\u5356\u6279\u53d1\u6f6e", "category": "Necklaces", "material": "18K Gold Plated", "price": 2.75, "image": "./images/product_47.jpg", "sales": 242}, {"id": 48, "title": "\u94dcSet Cubic Zirconia \u7231\u5fc3\u5fc3\u5f623\u722a\u9879\u94fe\u7f51\u7403\u94fe\u8f7b\u5962Fashion \u6f6e\u5973\u756a\u79ba", "category": "Necklaces", "material": "18K Gold Plated", "price": 9.35, "image": "./images/product_48.jpg", "sales": 41}, {"id": 49, "title": "\u6b27\u7f8eDesigner \u91d1\u8272\u65b9\u5f62Cubic Zirconia \u4e09\u4ef6\u5957\u53e0\u6234\u6212\u6307\u65f6\u5c1a\u8f7b\u5962\u9970\u54c1\u9ad8\u7ea7\u611f", "category": "Rings", "material": "18K Gold Plated", "price": 2.2, "image": "./images/product_49.jpg", "sales": 213}, {"id": 50, "title": "Copper with 18k\u91d13mm Cubic Zirconia \u76ae\u5e26\u6263Tennis Bracelet Fashion \u8f7b\u5962\u9ad8\u7ea7\u611f\u9996\u9970\u7206\u6b3e\u6f6e\u6d41", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_50.jpg", "sales": 13}, {"id": 51, "title": "New \u94dcSet 5mm \u65b9\u5f62Cubic Zirconia \u624b\u94fe\u954018k\u8f7b\u5962\u9ad8\u7ea7\u611f\u8bbe\u8ba1 \u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_51.jpg", "sales": 1}, {"id": 52, "title": "\u94dcSet Cubic Zirconia \u954018k\u91d1\u6212\u6307Fashion \u53e4\u5df4\u7537\u5973\u6212\u9970\u91cd\u5de5 \u6279\u53d1", "category": "Rings", "material": "18K Gold Plated", "price": 3.41, "image": "./images/product_52.jpg", "sales": 168}, {"id": 53, "title": "3\u722a3mm 4mm \u94dc\u9576Cubic Zirconia \u7f51\u7403\u516b\u5b57\u6263\u624b\u94fe\u5c0f\u4f17\u8bbe\u8ba1 \u70ed\u5356\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_53.jpg", "sales": 225}, {"id": 54, "title": "\u5706\u5f624mm \u91d1\u8272Cubic Zirconia \u7eff\u8272\u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94fe\u6f6e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_54.jpg", "sales": 48}, {"id": 55, "title": "\u5706\u5f624mm \u91d1\u8272Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94fe Fashion \u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_55.jpg", "sales": 87}, {"id": 56, "title": "New 3MM\u94dc\u9576Cubic Zirconia Tennis Bracelet \u5f39\u7c27\u6263\u624b\u94fe\u53cc\u6392Tennisbracelet\u6f6e\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_56.jpg", "sales": 58}, {"id": 57, "title": "12mm \u53e4\u5df4\u9879\u94fe\u51b0\u7cd6\u9879\u94fe\u94dcSet Cubic Zirconia \u9888\u94fe\u91cd\u5de5\u8bbe\u8ba1\u563b\u54c8\u6b27\u7f8eDesigner \u4e13\u4f9b\u6279", "category": "Necklaces", "material": "18K Gold Plated", "price": 14.19, "image": "./images/product_57.jpg", "sales": 581}, {"id": 58, "title": "\u4e0d\u9508\u94a2Set Cubic Zirconia \u8033\u9489\u8033\u9970Fashion \u7537\u5973\u540c\u6b3e\u6f6eDesigner \u7206\u6b3e \u9970\u54c1", "category": "Earrings", "material": "18K Gold Plated", "price": 2.2, "image": "./images/product_58.jpg", "sales": 250}, {"id": 59, "title": "\u4e09\u722aTennis Necklace 4mm \u563b\u54c8\u94dc\u9576Cubic Zirconia \u8f7b\u5962\u4e9a\u9a6c\u900aBestseller \u9879\u9970\u6f6e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.26, "image": "./images/product_59.jpg", "sales": 547}, {"id": 60, "title": "5mm \u563b\u54c8\u7f51\u7403\u94fe\u6b27\u7f8e \u6392\u94bb\u8f7b\u5962Full Pave Cubic Zirconia \u624b\u94feFashion \u624b\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.63, "image": "./images/product_60.jpg", "sales": 27}, {"id": 61, "title": "New 4-Prong Setting 2.5mm 3.5mm Cubic Zirconia Full Pave Tennis Bracelet Copper ", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.3, "image": "./images/product_61.jpg", "sales": 435}, {"id": 62, "title": "4mm \u5706\u5f62Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94feFashion \u65b0", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_62.jpg", "sales": 307}, {"id": 63, "title": "New Copper with 18k\u91d1Set 3mm Cubic Zirconia \u94f6\u8272Full Pave \u563b\u54c8Tennis Necklace \u9888\u94fe \u6279", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_63.jpg", "sales": 3}, {"id": 64, "title": "\u94dcSet \u5fc3\u5f62Cubic Zirconia \u7231\u5fc3\u624b\u94feFull Pave Tennis Bracelet \u65f6\u5c1a\u6f6e\u6d41", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.96, "image": "./images/product_64.jpg", "sales": 47}, {"id": 65, "title": "\u4e09\u722aTennis Necklace 2mm 3mm 4mm \u563b\u54c8\u94dc\u9576Cubic Zirconia \u8f7b\u5962\u4e9a\u9a6c\u900aBestseller \u6f6e\u5de5\u5382\u6279", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.26, "image": "./images/product_65.jpg", "sales": 928}, {"id": 66, "title": "New 3mm Copper with 18K Gold \u9ed1\u8272\u9ed1\u7eb3\u7c73\u7f51\u7403\u94feFashion \u9ad8\u7ea7\u611f\u756a\u79ba\u6279\u53d1\u9996\u9970", "category": "Jewellery", "material": "18K Gold Plated", "price": 3.08, "image": "./images/product_66.jpg", "sales": 20}, {"id": 67, "title": "2mm Cubic Zirconia \u5355\u6392Full Pave Tennis Necklace \u7b80\u7ea6Fashion \u6b27\u7f8eDesigner \u70ed\u5356\u9888\u94fe \u756a\u79ba\u9996\u9970", "category": "Necklaces", "material": "18K Gold Plated", "price": 8.25, "image": "./images/product_67.jpg", "sales": 10}, {"id": 68, "title": "4mm \u94dcSet Cubic Zirconia Tennis Necklace \u65f6\u5c1a\u91cd\u5de5\u8bbe\u8ba1\u9879\u94fe \u563b\u54c8\u7f51\u7403\u9888\u94fe", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_68.jpg", "sales": 7}, {"id": 69, "title": "4-Prong Setting Cubic Zirconia 3mm -8mm\u94dc\u8033\u9489\u8033\u9970\u7ecf\u5178Fashion", "category": "Earrings", "material": "18K Gold Plated", "price": 2.86, "image": "./images/product_69.jpg", "sales": 55}, {"id": 70, "title": "New \u94dcSet Cubic Zirconia \u84dd\u8272Tennis Bracelet \u6f6e\u6d41\u65f6\u5c1a\u8f7b\u5962 \u756a\u79ba", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_70.jpg", "sales": 28}, {"id": 71, "title": "\u65b9\u5f62New \u6b27\u7f8e\u563b\u54c8\u94dcSet Cubic Zirconia \u624b\u94fe\u53e4\u5df4\u94fe\u6f6eDesigner \u4e9a\u9a6c\u900a\u6e90\u5934\u5382\u5bb6\u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 5.5, "image": "./images/product_71.jpg", "sales": 70}, {"id": 72, "title": "5mm \u5706\u5f62Cubic Zirconia \u516b\u5b57\u6263\u7f51\u7403\u94dc\u624b\u94feFashion \u65b0", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.63, "image": "./images/product_72.jpg", "sales": 3}, {"id": 73, "title": "New 3mm \u7ea2\u521a\u7389Tennis Bracelet Copper with 18k\u91d1\u6b27\u7f8e\u8f7b\u5962", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.07, "image": "./images/product_73.jpg", "sales": 10}, {"id": 74, "title": "10mm\u53e4\u5df4\u51b0\u7cd6\u94fe\u9576\u94dc\u5d4cCubic Zirconia Tennis Bracelet \u7ffb\u76d6\u91cd\u5de5\u8bbe\u8ba1 \u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 6.05, "image": "./images/product_74.jpg", "sales": 3}, {"id": 75, "title": "\u53e4\u5df4\u624b\u94fe\u94dcSet Cubic Zirconia \u563b\u54c8\u91cd\u5de5\u8bbe\u8ba1hip hop \u6f6e\u6d41", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.07, "image": "./images/product_75.jpg", "sales": 5}, {"id": 76, "title": "New 2mm \u94dcSet Cubic Zirconia \u7231\u5fc3Tennis Bracelet \u65f6\u5c1a\u6f6e\u6d41\u91cd\u5de5\u8bbe\u8ba1 \u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.85, "image": "./images/product_76.jpg", "sales": 34}, {"id": 77, "title": "\u56db\u4ef6\u5957\u94dc\u8033\u73af4-Prong Setting Cubic Zirconia \u8033\u9489Fashion \u4e9a\u9a6c\u900a \u7206\u6b3e\u5de5\u5382\u76f4\u4f9b\u6279", "category": "Earrings", "material": "18K Gold Plated", "price": 3.63, "image": "./images/product_77.jpg", "sales": 19}, {"id": 78, "title": "New \u94dcSet 7mm Cubic Zirconia Tennis Bracelet \u954018k\u8f7b\u5962\u9ad8\u7ea7\u611f\u8bbe\u8ba1 \u6f6e\u5de5\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_78.jpg", "sales": 2}, {"id": 79, "title": "New 3mm \u94dcSet \u6fb3\u5b9dFashion \u624b\u94fe\u53ef\u8c03\u8282\u62bd\u62c9\u6f6e\u6d41\u9ad8\u7ea7\u611f\u624b\u9970\u756a\u79ba\u5382", "category": "Bracelets", "material": "18K Gold Plated", "price": 5.39, "image": "./images/product_79.jpg", "sales": 5}, {"id": 80, "title": "Copper with 18k\u91d17mm \u4e2a\u6027\u7f16\u7ec7\u9ebb\u82b1\u624b\u94fe\u6b27\u7f8e\u563b\u54c8\u98ce\u9970\u54c1\u914d\u9970", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.52, "image": "./images/product_80.jpg", "sales": 40}, {"id": 81, "title": "New \u94dcSet 3mm Cubic Zirconia \u957f\u6b3eFull Pave \u8033\u73af\u8033\u9970\u8f7b\u5962\u9ad8\u7ea7\u611f \u7206\u6b3e", "category": "Earrings", "material": "18K Gold Plated", "price": 2.2, "image": "./images/product_81.jpg", "sales": 57}, {"id": 82, "title": "New \u7f51\u7403Cubic Zirconia \u65b9\u5f62\u5f69\u8272\u53ef\u8c03\u8282\u9f99\u867e\u6263\u624b\u94fe\u65f6\u5c1a\u8bbe \u6279\u53d1", "category": "Bracelets", "material": "18K Gold Plated", "price": 2.2, "image": "./images/product_82.jpg", "sales": 2}, {"id": 83, "title": "Designer \u563b\u54c8\u914d\u9970\u94dc\u9576Cubic Zirconia T\u65b9Cubic Zirconia \u6212\u6307\u6b27\u7f8e\u4e2a\u6027\u70ed\u5356\u9970\u54c1\u7cbe\u81f4\u767e\u642d", "category": "Rings", "material": "18K Gold Plated", "price": 2.64, "image": "./images/product_83.jpg", "sales": 20}, {"id": 84, "title": "5mm \u94dcSet \u767d\u9506\u7eff\u9506Tennis Bracelet \u65f6\u5c1a\u516b\u5b57\u6263\u94fe\u4e9a\u9a6c\u900a \u94fe\u6761", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_84.jpg", "sales": 198}, {"id": 85, "title": "\u5fae\u9576Cubic Zirconia \u8377\u9c81\u65af\u4e4b\u773c\u5b89\u8d6b\u5341\u5b57\u67b6\u540a\u5760\u9879\u94fe\u9879\u9970Designer Designer \u70ed\u9500", "category": "Necklaces", "material": "18K Gold Plated", "price": 4.4, "image": "./images/product_85.jpg", "sales": 14}, {"id": 86, "title": "\u56db\u722a\u949b\u94a2\u8033\u9489\u6279\u53d1 \u53ccCubic Zirconia \u4e0d\u9508\u94a2\u8033\u9aa8\u9489 6mm \u65e5\u7cfb\u65f6\u5c1a\u767d\u91d1\u5957\u88c5\u5fae\u9576", "category": "Earrings", "material": "Platinum Plated", "price": 0.73, "image": "./images/product_86.jpg", "sales": 18}, {"id": 87, "title": "Copper with 18K Gold Set Cubic Zirconia Tennis Necklace \u9888\u94fe\u65f6\u5c1a\u6f6e\u6d41\u6b27\u7f8e", "category": "Necklaces", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_87.jpg", "sales": 1}, {"id": 88, "title": "\u6b27\u7f8e\u7206\u6b3eCopper with 18k \u91d1\u624b\u5de5\u7f16\u7ec7\u590d\u53e4\u9f99\u867e\u62637mm \u9ebb\u82b1\u94fe \u4e9a\u9a6c\u900a\u6279\u53d1", "category": "Jewellery", "material": "18K Gold Plated", "price": 3.52, "image": "./images/product_88.jpg", "sales": 4}, {"id": 89, "title": "New 2.5mm Tennis Bracelet Copper with 18kSet \u5f69\u8272\u65b9\u5f62\u6e10\u53d8Cubic Zirconia \u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 7.48, "image": "./images/product_89.jpg", "sales": 4}, {"id": 90, "title": "New S925\u94f6Set Cubic Zirconia Tennis Bracelet \u6f6e\u6d41\u65f6\u5c1a\u91cd\u5de5\u8bbe\u8ba1\u624b\u9970Designer \u7206\u6b3e\u756a\u79ba\u6279", "category": "Bracelets", "material": "Sterling Silver", "price": 35.31, "image": "./images/product_90.jpg", "sales": 3}, {"id": 91, "title": "New 3MM\u94dc\u9576Cubic Zirconia Tennis Bracelet \u5f39\u7c27\u6263\u624b\u94fe\u53cc\u6392Tennisbracelet\u6f6e\u5de5\u5382\u6279", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_91.jpg", "sales": 6}, {"id": 92, "title": "\u6b27\u7f8e\u7ffb\u76d6\u6263\u53e4\u5df4\u624b\u94fe10mm12mm 14mm \u6f6e\u6d41\u91cd\u5de5\u8bbe\u8ba1", "category": "Bracelets", "material": "18K Gold Plated", "price": 8.91, "image": "./images/product_92.jpg", "sales": 4}, {"id": 93, "title": "12mm \u94dcSet Cubic Zirconia \u8033\u9489\u8033\u9970Fashion \u6f6e\u6d41\u91cd\u5de5", "category": "Earrings", "material": "18K Gold Plated", "price": 1.21, "image": "./images/product_93.jpg", "sales": 34}, {"id": 94, "title": "Designer \u590d\u53e4\u98ceFull Pave \u692d\u5706\u76d84mm *6mm \u767d\u91d1\u8272\u86cb\u767dTennis Bracelet \u86cb\u5f62\u624b\u94fe \u6279", "category": "Bracelets", "material": "Platinum Plated", "price": 4.18, "image": "./images/product_94.jpg", "sales": 77}, {"id": 95, "title": "Designer \u767d\u91d1\u65b9\u5f62Cubic Zirconia \u4e09\u4ef6\u5957\u53ef\u53e0\u6234\u6212\u6307\u6b27\u7f8e\u65f6\u5c1a\u5c0f\u4f17\u8f7b\u5962\u9970\u54c1 \u4e9a\u9a6c", "category": "Rings", "material": "Platinum Plated", "price": 3.08, "image": "./images/product_95.jpg", "sales": 45}, {"id": 96, "title": "3\u722a3mm 4mm Tennis Bracelet \u94dcSet Cubic Zirconia \u516b\u5b57\u6263\u65f6\u5c1a\u4e9a\u9a6c\u900a ins\u98ce", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.19, "image": "./images/product_96.jpg", "sales": 27}, {"id": 97, "title": "\u51b0\u7cd6\u5341\u5b57\u67b6\u540a\u5760\u5927\u53f7Cubic Zirconia \u9879\u94fe\u563b\u54c8\u4e2a\u6027\u7537\u5973\u6b27\u7f8e \u4e9a\u9a6c\u900a\u6279\u53d1\u9996\u9970", "category": "Necklaces", "material": "18K Gold Plated", "price": 4.29, "image": "./images/product_97.jpg", "sales": 70}, {"id": 98, "title": "\u4e0d\u9508\u94a2\u9879\u94fe\u65b9\u5f62\u5361\u94fe\u91d1\u8272\u9879\u94fe\u7537\u5973INS\u98ce\u6f6eDesigner \u6b27\u7f8e \u6279\u53d1\u4e0d\u6389\u8272", "category": "Necklaces", "material": "18K Gold Plated", "price": 1.32, "image": "./images/product_98.jpg", "sales": 9}, {"id": 99, "title": "\u94dcSet 6mm Cubic Zirconia Fashion \u94dcTennis Bracelet \u6f6e \u4e9a\u9a6c\u900atemu\u7206\u6b3e", "category": "Bracelets", "material": "18K Gold Plated", "price": 3.74, "image": "./images/product_99.jpg", "sales": 139}, {"id": 100, "title": "18K\u771f\u7a7a\u7535\u9540316L\u4e0d\u9508\u94a22.0\u7ebf\u5f84\u7ebf\u5708\u8033\u73af\u8010\u78e8\u4fdd\u8272\u8033\u9489\u8033\u9970\u73af\u5f62\u767e\u642d", "category": "Earrings", "material": "18K Gold Plated", "price": 0.88, "image": "./images/product_100.jpg", "sales": 622}];
+
+        let cart = JSON.parse(localStorage.getItem('rkun_cart') || '[]');
+        let currentFilter = 'all';
+        let displayedCount = 12;
+
+        function renderFeatured() {
+            const grid = document.getElementById('featuredGrid');
+            grid.innerHTML = featuredProducts.slice(0, 8).map(p => productCard(p, true)).join('');
+        }
+
+        function renderShop() {
+            const grid = document.getElementById('shopGrid');
+            let filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+            let toShow = filtered.slice(0, displayedCount);
+            grid.innerHTML = toShow.map(p => productCard(p, false)).join('');
+            document.getElementById('loadMore').style.display = displayedCount >= filtered.length ? 'none' : 'inline-flex';
+        }
+
+        function productCard(p, isFeatured) {
+            const badge = isFeatured && p.sales > 10000 ? '<span class="product-badge">Bestseller</span>' : '';
+            const wasPrice = (p.price * 1.4).toFixed(2);
+            return '<div class="product-card" onclick="viewProduct(' + p.id + ')">' +
+                '<div class="product-image">' +
+                    '<img src="' + p.image + '" alt="' + p.title.replace(/"/g, '&quot;') + '" loading="lazy">' +
+                    badge +
+                    '<button class="product-wishlist" onclick="event.stopPropagation(); toggleWishlist(' + p.id + ')">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>' +
+                    '</button>' +
+                '</div>' +
+                '<div class="product-info">' +
+                    '<div class="product-category">' + p.category + '</div>' +
+                    '<div class="product-title">' + p.title + '</div>' +
+                    '<div class="product-meta">' +
+                        '<div class="product-price">£' + p.price.toFixed(2) + ' <span class="was">£' + wasPrice + '</span></div>' +
+                        '<button class="add-to-cart" onclick="event.stopPropagation(); addToCart(' + p.id + ')" aria-label="Add to cart">' +
+                            '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>' +
+                        '</button>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        }
+
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                displayedCount = 12;
+                renderShop();
+            });
+        });
+
+        document.getElementById('loadMore').addEventListener('click', function() {
+            displayedCount += 12;
+            renderShop();
+        });
+
+        function addToCart(id) {
+            const product = allProducts.find(p => p.id === id) || featuredProducts.find(p => p.id === id);
+            if (!product) return;
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id: product.id, title: product.title, price: product.price, image: product.image, qty: 1 });
+            }
+            saveCart();
+            updateCartUI();
+            showToast(product.title + ' added to bag');
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            saveCart();
+            updateCartUI();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) removeFromCart(id);
+                else { saveCart(); updateCartUI(); }
+            }
+        }
+
+        function saveCart() {
+            localStorage.setItem('rkun_cart', JSON.stringify(cart));
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').textContent = count;
+
+            const itemsContainer = document.getElementById('cartItems');
+            const footer = document.getElementById('cartFooter');
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg><p>Your bag is empty</p></div>';
+                footer.style.display = 'none';
+            } else {
+                itemsContainer.innerHTML = cart.map(item => 
+                    '<div class="cart-item">' +
+                        '<img src="' + item.image + '" alt="' + item.title.replace(/"/g, '&quot;') + '">' +
+                        '<div class="cart-item-info">' +
+                            '<div class="cart-item-title">' + item.title + '</div>' +
+                            '<div class="cart-item-price">£' + item.price.toFixed(2) + '</div>' +
+                            '<div class="cart-item-qty">' +
+                                '<button class="qty-btn" onclick="updateQty(' + item.id + ', -1)">−</button>' +
+                                '<span>' + item.qty + '</span>' +
+                                '<button class="qty-btn" onclick="updateQty(' + item.id + ', 1)">+</button>' +
+                            '</div>' +
+                            '<button class="remove-item" onclick="removeFromCart(' + item.id + ')">Remove</button>' +
+                        '</div>' +
+                    '</div>'
+                ).join('');
+                footer.style.display = 'block';
+                const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+                document.getElementById('cartSubtotal').textContent = '£' + subtotal.toFixed(2);
+            }
+        }
+
+        function toggleCart() {
+            document.getElementById('cartOverlay').classList.toggle('open');
+            document.getElementById('cartDrawer').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('cartDrawer').classList.contains('open') ? 'hidden' : '';
+        }
+
+        function checkout() {
+            showToast('Redirecting to secure checkout...');
+        }
+
+        function viewProduct(id) {
+            showToast('Product details coming soon');
+        }
+
+        function toggleWishlist(id) {
+            showToast('Added to wishlist');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('rkun_cookies', 'accepted');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('rkun_cookies', 'declined');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        if (localStorage.getItem('rkun_cookies')) {
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        renderFeatured();
+        renderShop();
+        updateCartUI();
+    </script>
+</body>
+</html>
